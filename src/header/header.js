@@ -1,0 +1,144 @@
+/* eslint-disable prettier/prettier */
+import React, {useState} from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {
+  View,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
+import Badge from '../badge/badge';
+
+export default function Header(props) {
+  const [hidden, setHidden] = useState(true);
+  const [iconName, setIconName] = useState('search-sharp');
+
+  return (
+    <>
+      <View style={styles.container}>
+        {props.showMenu ? (
+          <View style={styles.left}>
+            <TouchableOpacity onPress={() => props.navigation.openDrawer()}>
+              <Icon style={styles.icon} name="menu" size={20} color="white" />
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <View style={styles.left}>
+            <TouchableOpacity onPress={() => props.navigation.goBack()}>
+              <Icon
+                style={styles.icon}
+                name="arrow-back"
+                size={20}
+                color="white"
+              />
+            </TouchableOpacity>
+          </View>
+        )}
+        {hidden ? (
+          <View style={styles.middle}>
+            <Text style={styles.headerTitle}>{props.title}</Text>
+          </View>
+        ) : (
+          <View style={styles.View2}>
+            <TextInput
+              style={styles.TextInput1}
+              placeholder="Enter your product"
+            />
+          </View>
+        )}
+        {props.showSearch ? (
+          <View style={styles.right}>
+            <TouchableOpacity
+              onPress={() => {
+                setHidden(!hidden);
+                setIconName(() =>
+                  iconName === 'close' ? 'search-sharp' : 'close',
+                );
+              }}>
+              <Icon
+                style={styles.icon}
+                name={iconName}
+                size={20}
+                color="white"
+              />
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <View style={styles.right} />
+        )}
+
+        {props.showCart ? (
+          <View style={styles.right}>
+            <TouchableOpacity onPress={() => props.navigation.navigate('Cart')}>
+              <Icon
+                style={styles.icon}
+                name="cart-outline"
+                size={20}
+                color="white"
+              />
+              <Badge />
+              {/* <View style={styles.badge}>
+                <Text style={{color: 'red'}}>1</Text>
+              </View> */}
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <View style={styles.right} />
+        )}
+      </View>
+    </>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'red',
+    height: 50,
+    zIndex: 1,
+  },
+  left: {
+    flex: 0.6,
+    alignItems: 'flex-start',
+    paddingLeft: 10,
+  },
+  middle: {
+    flex: 3,
+    alignItems: 'center',
+  },
+  right: {
+    flex: 0.4,
+    marginLeft: 5,
+    // alignItems: 'flex-end',
+    // paddingRight: 0,
+  },
+  headerTitle: {
+    color: 'white',
+    fontSize: 20,
+  },
+  TextInput1: {
+    borderWidth: 1,
+    borderColor: 'white',
+    backgroundColor: 'white',
+    width: 250,
+    borderRadius: 25,
+  },
+  View2: {
+    alignItems: 'center',
+    alignSelf: 'center',
+  },
+  badge: {
+    position: 'absolute',
+    right: 14,
+    top: 2,
+    backgroundColor: 'white',
+    borderRadius: 9,
+    width: 12,
+    height: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
