@@ -27,6 +27,7 @@ import Kitchen from '../categories/kitchen';
 import BedRoom from '../categories/Bedroom';
 import fieldValidation from '../../fieldValidation/fieldValidation';
 import SliderModal from '../Slider/sliderModal';
+import HooksUsage from '../Hooks/Hooks';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -114,6 +115,7 @@ function ProfileScreen() {
       <Stack.Screen name="Login" component={RegisterPage} />
       <Stack.Screen name="Order" component={OrderScreen} />
       <Stack.Screen name="fieldValidation" component={fieldValidation} />
+      <Stack.Screen name="HooksUsage" component={HooksUsage} />
     </Stack.Navigator>
   );
 }

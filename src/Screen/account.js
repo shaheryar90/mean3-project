@@ -70,9 +70,11 @@ class Account extends Component {
                 />
               </TouchableOpacity>
             </View>
-            <View style={styles.View6}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('HooksUsage')}
+              style={styles.View6}>
               <Text>Terms And Services</Text>
-            </View>
+            </TouchableOpacity>
             <View style={styles.View7}>
               <TouchableOpacity>
                 <Icon
