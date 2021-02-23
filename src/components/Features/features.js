@@ -105,15 +105,15 @@ export default class Features extends Component {
                   <View style={styles.View22} />
                 </View>
 
-                <View style={styles.View23}>
-                  <View style={{width: 30, paddingLeft: 5}}>
-                    <Button title="S" color="#c0c0c0" />
+                <View style={styles.View19}>
+                  <View style={styles.SizeButton}>
+                    <Text style={{color: 'white'}}>S</Text>
                   </View>
-                  <View style={{width: 25}}>
-                    <Button title="M" color="#c0c0c0" />
+                  <View style={styles.SizeButton}>
+                    <Text style={{color: 'white'}}>M</Text>
                   </View>
-                  <View style={{width: 25}}>
-                    <Button title="L" color="#c0c0c0" />
+                  <View style={styles.SizeButton}>
+                    <Text style={{color: 'white'}}>L</Text>
                   </View>
                 </View>
                 <View style={styles.View26}>
@@ -221,15 +221,15 @@ export default class Features extends Component {
                   <View style={styles.View15} />
                 </View>
 
-                <View style={styles.View25}>
-                  <View style={{width: 30}}>
-                    <Button title="S" color="#c0c0c0" />
+                <View style={styles.View19}>
+                  <View style={styles.SizeButton}>
+                    <Text style={{color: 'white'}}>S</Text>
                   </View>
-                  <View style={{width: 30}}>
-                    <Button title="M" color="#c0c0c0" />
+                  <View style={styles.SizeButton}>
+                    <Text style={{color: 'white'}}>M</Text>
                   </View>
-                  <View style={{width: 30}}>
-                    <Button title="L" color="#c0c0c0" />
+                  <View style={styles.SizeButton}>
+                    <Text style={{color: 'white'}}>L</Text>
                   </View>
                 </View>
                 <View style={styles.View24}>
@@ -341,16 +341,17 @@ export default class Features extends Component {
                 </View>
 
                 <View style={styles.View19}>
-                  <View style={{width: 30}}>
-                    <Button title="S" color="#c0c0c0" />
+                  <View style={styles.SizeButton}>
+                    <Text style={{color: 'white'}}>S</Text>
                   </View>
-                  <View style={{width: 30}}>
-                    <Button title="M" color="#c0c0c0" />
+                  <View style={styles.SizeButton}>
+                    <Text style={{color: 'white'}}>M</Text>
                   </View>
-                  <View style={{width: 30}}>
-                    <Button title="L" color="#c0c0c0" />
+                  <View style={styles.SizeButton}>
+                    <Text style={{color: 'white'}}>L</Text>
                   </View>
                 </View>
+
                 <View style={styles.View18}>
                   <View>
                     <Text style={styles.Text23}>$100,000.00</Text>
@@ -358,16 +359,10 @@ export default class Features extends Component {
                 </View>
               </View>
             </TouchableOpacity>
-
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('Screen4')}>
               <View
-                style={{
-                  borderWidth: 1,
-                  borderColor: 'gray',
-                  marginLeft: 10,
-                  height: 247,
-                }}>
+                style={{borderWidth: 1, borderColor: 'gray', marginLeft: 10}}>
                 <ImageBackground
                   source={{
                     uri: 'https://m.media-amazon.com/images/I/51feN5hlM3L.jpg',
@@ -401,7 +396,11 @@ export default class Features extends Component {
                       </TouchableOpacity>
                     </View>
                   </View>
-                  <View style={{flexDirection: 'row', marginTop: 50}}>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      marginTop: 50,
+                    }}>
                     <View style={{marginLeft: 10}}>
                       <Icon
                         style={styles.icon}
@@ -421,7 +420,7 @@ export default class Features extends Component {
                     <View style={{flex: 1}}>
                       <Text>4.5</Text>
                     </View>
-                    <View style={{flex: 1}}>
+                    <View style={{flex: 1, paddingRight: 10}}>
                       <Icon
                         style={styles.icon}
                         name="star"
@@ -431,29 +430,46 @@ export default class Features extends Component {
                     </View>
                   </View>
                 </ImageBackground>
-                <Text style={styles.Text6}>Habitt</Text>
-                <Text style={styles.Text7}>Chair</Text>
+                <Text
+                  style={{
+                    color: 'red',
+                    fontWeight: 'bold',
+                    fontSize: 15,
+                    paddingLeft: 5,
+                  }}>
+                  Habitt
+                </Text>
+                <Text
+                  style={{
+                    color: 'gray',
+                    fontWeight: 'bold',
+                    fontSize: 12,
+                    paddingLeft: 5,
+                  }}>
+                  Arlo Chair
+                </Text>
 
-                <View style={styles.View10}>
-                  <View style={styles.View6} />
-                  <View style={styles.View7} />
-                  <View style={styles.View8} />
+                <View
+                  style={{flexDirection: 'row', marginTop: 4, paddingLeft: 5}}>
+                  <View style={styles.View5} />
+                  <View style={styles.View16} />
+                  <View style={styles.View17} />
                 </View>
 
-                <View style={styles.View9}>
-                  <View style={styles.View13}>
-                    <Button title="S" color="#c0c0c0" />
+                <View style={styles.View19}>
+                  <View style={styles.SizeButton}>
+                    <Text style={{color: 'white'}}>S</Text>
                   </View>
-                  <View style={styles.View13}>
-                    <Button title="M" color="#c0c0c0" />
+                  <View style={styles.SizeButton}>
+                    <Text style={{color: 'white'}}>M</Text>
                   </View>
-                  <View style={styles.View13}>
-                    <Button title="L" color="#c0c0c0" />
+                  <View style={styles.SizeButton}>
+                    <Text style={{color: 'white'}}>L</Text>
                   </View>
                 </View>
-                <View style={styles.View11}>
+                <View style={styles.View18}>
                   <View>
-                    <Text style={styles.Text4}> $ 50.00</Text>
+                    <Text style={styles.Text23}>$200.00</Text>
                   </View>
                 </View>
               </View>
@@ -466,7 +482,17 @@ export default class Features extends Component {
 }
 const styles = StyleSheet.create({
   container1: {
-    paddingTop: 20,
+    // paddingTop: 10,
+    marginTop: 5,
+  },
+  SizeButton: {
+    width: 20,
+    height: 20,
+    padding: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'lightgrey',
+    marginRight: 10,
   },
   Text1: {
     color: 'red',
@@ -504,29 +530,29 @@ const styles = StyleSheet.create({
   },
   View5: {
     backgroundColor: 'brown',
-    width: 30,
-    height: 30,
+    width: 20,
+    height: 20,
     borderRadius: 25,
     marginRight: 5,
   },
   View6: {
     backgroundColor: 'black',
-    width: 30,
-    height: 30,
+    width: 20,
+    height: 20,
     borderRadius: 25,
     marginRight: 5,
   },
   View7: {
     backgroundColor: 'blue',
-    width: 30,
-    height: 30,
+    width: 20,
+    height: 20,
     borderRadius: 25,
     marginRight: 5,
   },
   View8: {
     backgroundColor: 'gray',
-    width: 30,
-    height: 30,
+    width: 20,
+    height: 20,
     borderRadius: 25,
     marginRight: 5,
   },
@@ -570,36 +596,36 @@ const styles = StyleSheet.create({
   },
   View13: {
     backgroundColor: 'brown',
-    width: 30,
-    height: 30,
+    width: 20,
+    height: 20,
     borderRadius: 25,
     marginRight: 5,
   },
   View14: {
     backgroundColor: 'black',
-    width: 30,
-    height: 30,
+    width: 20,
+    height: 20,
     borderRadius: 25,
     marginRight: 5,
   },
   View15: {
     backgroundColor: 'yellow',
-    width: 30,
-    height: 30,
+    width: 20,
+    height: 20,
     borderRadius: 25,
     marginRight: 5,
   },
   View16: {
     backgroundColor: 'black',
-    width: 30,
-    height: 30,
+    width: 20,
+    height: 20,
     borderRadius: 25,
     marginRight: 5,
   },
   View17: {
     backgroundColor: 'gray',
-    width: 30,
-    height: 30,
+    width: 20,
+    height: 20,
     borderRadius: 25,
     marginRight: 5,
   },
@@ -610,30 +636,30 @@ const styles = StyleSheet.create({
   },
   View19: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    // justifyContent: 'space-around',
     width: 120,
     marginTop: 10,
     paddingLeft: 5,
   },
   View20: {
     backgroundColor: 'brown',
-    width: 30,
-    height: 30,
+    width: 20,
+    height: 20,
     borderRadius: 25,
     marginRight: 5,
     borderColor: 'red',
   },
   View21: {
     backgroundColor: 'black',
-    width: 30,
-    height: 30,
+    width: 20,
+    height: 20,
     borderRadius: 25,
     marginRight: 5,
   },
   View22: {
     backgroundColor: 'gray',
-    width: 30,
-    height: 30,
+    width: 20,
+    height: 20,
     borderRadius: 25,
     marginRight: 5,
   },

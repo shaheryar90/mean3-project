@@ -101,7 +101,11 @@ class Register extends Component {
           />
         ) : null}
         <View style={styles.RegisterContainer}>
-          <Header title="Sign up" navigation={this.props.navigation} />
+          <Header
+            showArrow={true}
+            title="Sign up"
+            navigation={this.props.navigation}
+          />
 
           <ScrollView
             contentContainerStyle={{

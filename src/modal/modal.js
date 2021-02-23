@@ -29,13 +29,16 @@ export default class WrapperComponent extends Component {
   }
 
   componentDidMount() {
-    this.getcurrentPositionAddress();
+    this.getcurrentPositionAddress(true);
   }
   updateUser = (user) => {
     this.setState({user: user});
   };
-  getcurrentPositionAddress() {
-    this.setState({loading: true, location: null});
+  getcurrentPositionAddress(load) {
+    console.log(load);
+    // if (load) {
+    this.setState({loading: load, location: null});
+    // }
 
     GetLocation.getCurrentPosition({
       enableHighAccuracy: true,
@@ -109,7 +112,7 @@ export default class WrapperComponent extends Component {
           this.setState({address: address});
           console.log('====================', this.state.address);
         } else {
-          this.getcurrentPositionAddress();
+          this.getcurrentPositionAddress(true);
         }
       })
 
@@ -182,9 +185,10 @@ export default class WrapperComponent extends Component {
                     {/* <TouchableOpacity
           style={styles.TextInputEmail}> */}
                     <TextInput
-                      // editable={false}
+                      editable={false}
                       // selectTextOnFocus={false}
                       placeholder="Current location"
+                      disabled={true}
                       // value={this.props.route.params?.address ?? null}
                       value={this.state.address}
                       selection={{start: 0, end: 0}}
@@ -193,6 +197,8 @@ export default class WrapperComponent extends Component {
                     {/* <TouchableOpacity/> */}
                   </View>
                   <MapView
+                    // showsUserLocation={true}
+                    // showsMyLocationButton={true}
                     style={{flex: 1}}
                     onRegionChangeComplete={(region) => {
                       console.log('ON REGION CHaNGE', region.latitude);
@@ -232,6 +238,7 @@ export default class WrapperComponent extends Component {
                   // }
                 /> */}
                   </MapView>
+
                   <View
                     style={{
                       position: 'absolute',
@@ -249,6 +256,26 @@ export default class WrapperComponent extends Component {
                       color="red"
                     />
                   </View>
+                  <TouchableOpacity
+                    onPress={this.getcurrentPositionAddress.bind(this, true)}
+                    style={{
+                      position: 'absolute',
+                      top: '85%',
+                      left: '85%',
+                      height: 40,
+                      width: 40,
+                      // borderRadius: 20,
+                      backgroundColor: 'white',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}>
+                    <Icon
+                      style={styles.icon}
+                      name="locate-outline"
+                      size={30}
+                      color="gray"
+                    />
+                  </TouchableOpacity>
 
                   {/* <View
                     style={{

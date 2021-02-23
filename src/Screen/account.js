@@ -49,7 +49,7 @@ class Account extends Component {
       <View style={styles.container}>
         <Header
           title="Account"
-          showMenu={true}
+          // showMenu={true}
           // showSearch={true}
           navigation={this.props.navigation}
         />
@@ -150,9 +150,12 @@ class Account extends Component {
                 />
               </TouchableOpacity>
             </View>
-            <View style={styles.View6}>
+
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('fieldValidation')}
+              style={styles.View6}>
               <Text>Contact Us</Text>
-            </View>
+            </TouchableOpacity>
             <View style={styles.View7}>
               <TouchableOpacity>
                 <Icon
@@ -164,6 +167,7 @@ class Account extends Component {
               </TouchableOpacity>
             </View>
           </View>
+
           <View>
             <View style={styles.View2}>
               <Text style={styles.Text1}>Account</Text>
@@ -182,7 +186,9 @@ class Account extends Component {
             </View>
           </TouchableOpacity>
           <View>{renderLine()}</View>
-          <View style={styles.View10}>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Order')}
+            style={styles.View10}>
             <View style={styles.View5}>
               <TouchableOpacity>
                 <Icon
@@ -196,7 +202,7 @@ class Account extends Component {
             <View style={styles.View6}>
               <Text>My Order</Text>
             </View>
-          </View>
+          </TouchableOpacity>
           <View>{renderLine()}</View>
 
           {!this.state.isLoggedIn ? (

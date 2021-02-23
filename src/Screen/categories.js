@@ -7,36 +7,167 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import Header from '../header/header';
+import GetScreenWidth from '../dimension/width';
+import Accordion from 'react-native-collapsible/Accordion';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-class Categories extends Component {
-  componentDidMount() {
-    console.log('PARAMS', this.props.route);
+export default class Categories extends Component {
+  constructor() {
+    super();
   }
+
+  // _renderSectionTitle = (section) => {
+  //   return (
+  //     <View style={styles.content}>
+  //       <Text>pakistan</Text>
+  //     </View>
+  //   );
+  // };
+
+  renderSerperator = () => {
+    return <View style={styles.VerticalLine} />;
+  };
   render() {
     return (
-      <View style={styles.container}>
-        <Header
-          title="Categories"
-          // showMenu={true}
-          // showSearch={true}
-          showCart={true}
-          navigation={this.props.navigation}
-        />
-        <Text>Categories</Text>
-        <TouchableOpacity
-          style={styles.TextInputEmail}
-          onPress={() => this.props.navigation.navigate('Map')}>
-          <TextInput
-            editable={false}
-            selectTextOnFocus={false}
-            placeholder="Current location"
-            value={this.props.route.params?.address ?? null}
-            selection={{start: 0, end: 0}}
+      <>
+        <View style={styles.container}>
+          <Header
+            title="Categories"
+            // showMenu={true}
+            // showSearch={true}
+            showSearch={true}
+            showCart={true}
+            navigation={this.props.navigation}
           />
-        </TouchableOpacity>
-      </View>
+          <ScrollView>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('furniture')}
+              style={{backgroundColor: 'whiteSmoke'}}>
+              <View
+                style={{
+                  margin: 20,
+
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  width: GetScreenWidth(90),
+                }}>
+                <View style={{flexDirection: 'row'}}>
+                  <View
+                    style={{
+                      backgroundColor: 'red',
+                      width: 40,
+                      height: 40,
+                      borderRadius: 40,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginTop: 5,
+                    }}>
+                    <Text style={{fontSize: 15, color: 'white'}}>F</Text>
+                  </View>
+                  <Text
+                    style={{
+                      fontSize: 18,
+                      color: 'red',
+                      margin: 10,
+                    }}>
+                    Furniture
+                  </Text>
+                </View>
+                <View>
+                  <Icon
+                    style={styles.icon}
+                    name="ios-arrow-forward"
+                    size={22}
+                    color="red"
+                  />
+                </View>
+              </View>
+            </TouchableOpacity>
+            <View>{this.renderSerperator()}</View>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Kitchen')}
+              style={{backgroundColor: 'whiteSmoke'}}>
+              <View
+                style={{
+                  margin: 20,
+
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  width: GetScreenWidth(90),
+                }}>
+                <View style={{flexDirection: 'row'}}>
+                  <View
+                    style={{
+                      backgroundColor: 'red',
+                      width: 40,
+                      height: 40,
+                      borderRadius: 40,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginTop: 5,
+                    }}>
+                    <Text style={{fontSize: 15, color: 'white'}}>K</Text>
+                  </View>
+                  <Text style={{fontSize: 18, color: 'red', margin: 10}}>
+                    Kitchen
+                  </Text>
+                </View>
+                <View>
+                  <Icon
+                    style={styles.icon}
+                    name="ios-arrow-forward"
+                    size={22}
+                    color="red"
+                  />
+                </View>
+              </View>
+            </TouchableOpacity>
+            <View>{this.renderSerperator()}</View>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('BedRoom')}
+              style={{backgroundColor: 'whiteSmoke'}}>
+              <View
+                style={{
+                  margin: 20,
+
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  width: GetScreenWidth(90),
+                }}>
+                <View style={{flexDirection: 'row'}}>
+                  <View
+                    style={{
+                      backgroundColor: 'red',
+                      width: 40,
+                      height: 40,
+                      borderRadius: 40,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginTop: 5,
+                    }}>
+                    <Text style={{fontSize: 15, color: 'white'}}>B</Text>
+                  </View>
+                  <Text style={{fontSize: 18, color: 'red', margin: 10}}>
+                    Bed Room
+                  </Text>
+                </View>
+                <View>
+                  <Icon
+                    style={styles.icon}
+                    name="ios-arrow-forward"
+                    size={22}
+                    color="red"
+                  />
+                </View>
+              </View>
+            </TouchableOpacity>
+            <View>{this.renderSerperator()}</View>
+          </ScrollView>
+        </View>
+      </>
     );
   }
 }
@@ -44,17 +175,15 @@ class Categories extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //   alignItems: 'center',
-    //   justifyContent: 'center',
   },
-  TextInputEmail: {
-    height: 50,
-    borderRadius: 10,
-    borderColor: 'gray',
-    borderWidth: 1,
-    backgroundColor: 'white',
-
-    width: 310,
+  VerticalLine: {
+    height: 1,
+    backgroundColor: 'lightgrey',
+    // marginVertical: 10,
+    // marginTop: 5,
+    // marginBottom: 30,
+  },
+  icon: {
+    margin: 10,
   },
 });
-export default Categories;

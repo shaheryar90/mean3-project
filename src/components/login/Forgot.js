@@ -20,7 +20,11 @@ class Forgot extends Component {
   render() {
     return (
       <View style={styles.Maincontainer}>
-        <Header title="forgot Password" navigation={this.props.navigation} />
+        <Header
+          showArrow={true}
+          title="forgot Password"
+          navigation={this.props.navigation}
+        />
 
         <ScrollView
           contentContainerStyle={{

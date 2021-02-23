@@ -27,8 +27,8 @@ export default connect(mapStateToProps, null)(Badge);
 const styles = StyleSheet.create({
   badge: {
     position: 'absolute',
-    right: 14,
-    top: 2,
+    right: 8,
+    top: 1,
     backgroundColor: 'white',
     borderRadius: 9,
     width: 12,

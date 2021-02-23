@@ -1,21 +1,31 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 import React, {Component} from 'react';
-import {Text, View, Image, ScrollView, StyleSheet} from 'react-native';
+import {
+  Text,
+  View,
+  Image,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 
 export default class Middle extends Component {
   render() {
     return (
-      <View>
-        <View>
+      <View style={{marginTop: 5}}>
+        <TouchableOpacity
+          onPress={() => this.props.navigation.navigate('Categories')}>
           <Text style={styles.Text2}>Categories</Text>
-        </View>
+        </TouchableOpacity>
         <View style={styles.View2}>
           <ScrollView
             horizontal={true}
             showHorizontalScrollView={false}
             showsHorizontalScrollIndicator={false}>
-            <View style={styles.View}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Categories')}
+              style={styles.View}>
               <Image
                 source={{
                   uri:
@@ -24,8 +34,11 @@ export default class Middle extends Component {
                 style={styles.Image2}
               />
               <Text>furniture</Text>
-            </View>
-            <View style={styles.View}>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Categories')}
+              style={styles.View}>
               <Image
                 source={{
                   uri:
@@ -34,8 +47,10 @@ export default class Middle extends Component {
                 style={styles.Image2}
               />
               <Text>lighting</Text>
-            </View>
-            <View style={styles.View}>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Categories')}
+              style={styles.View}>
               <Image
                 source={{
                   uri:
@@ -44,8 +59,10 @@ export default class Middle extends Component {
                 style={styles.Image2}
               />
               <Text>Kitchen</Text>
-            </View>
-            <View style={styles.View}>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Categories')}
+              style={styles.View}>
               <Image
                 source={{
                   uri:
@@ -54,7 +71,7 @@ export default class Middle extends Component {
                 style={styles.Image2}
               />
               <Text>BedRoom</Text>
-            </View>
+            </TouchableOpacity>
             <View style={styles.View}>
               <Image
                 source={{
@@ -65,7 +82,9 @@ export default class Middle extends Component {
               />
               <Text>OutDoor</Text>
             </View>
-            <View style={styles.View}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Categories')}
+              style={styles.View}>
               <Image
                 source={{
                   uri:
@@ -74,8 +93,10 @@ export default class Middle extends Component {
                 style={styles.Image2}
               />
               <Text>BedRoom</Text>
-            </View>
-            <View style={styles.View}>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Categories')}
+              style={styles.View}>
               <Image
                 source={{
                   uri:
@@ -84,7 +105,7 @@ export default class Middle extends Component {
                 style={styles.Image2}
               />
               <Text>OutDoor</Text>
-            </View>
+            </TouchableOpacity>
           </ScrollView>
         </View>
       </View>

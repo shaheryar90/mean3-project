@@ -38,15 +38,16 @@ class Home extends Component {
           <Header
             title="My home"
             showSearch={true}
-            showMenu={true}
+            showArrow={false}
+            // showMenu={true}
             showBack={true}
             showCart={true}
             navigation={this.props.navigation}
           />
           <ScrollView>
             <Slider showModal={this.handleModalVisible} />
-            <Middle />
-            <Features />
+            <Middle navigation={this.props.navigation} />
+            <Features navigation={this.props.navigation} />
             <Slider1 />
             <Last />
           </ScrollView>

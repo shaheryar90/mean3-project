@@ -18,9 +18,29 @@ class Profile extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <Header navigation={this.props.navigation} />
+        <Header navigation={this.props.navigation} showArrow={true} />
         <View style={styles.container}>
           <Text style={styles.profileText}>Profile</Text>
+        </View>
+
+        <View
+          style={{
+            position: 'absolute',
+            top: '27%',
+            left: '37%',
+            height: 100,
+            width: 100,
+            // borderWidth: 1,
+            borderRadius: 50,
+            backgroundColor: 'lightgrey',
+            justifyContent: 'center',
+          }}>
+          <Icon
+            style={styles.icon}
+            name="person-circle-outline"
+            size={100}
+            color="black"
+          />
         </View>
         <ScrollView
           contentContainerStyle={{
@@ -123,18 +143,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
     backgroundColor: 'red',
-    width: '160%',
+    width: '140%',
     height: 300,
-    borderBottomLeftRadius: 800,
-    borderBottomRightRadius: 800,
+    borderBottomLeftRadius: 600,
+    borderBottomRightRadius: 600,
     // position: 'absolute',
-    top: -60,
-    marginBottom: -30,
+    top: -100,
+    marginBottom: -10,
   },
   profileText: {
     fontSize: 40,
     color: 'white',
   },
+  // icon: {
+  //   marginTop: 120,
+  // },
   userName: {
     flexDirection: 'row',
     justifyContent: 'flex-start',

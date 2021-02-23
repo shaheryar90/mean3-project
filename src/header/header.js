@@ -23,7 +23,8 @@ export default function Header(props) {
               <Icon style={styles.icon} name="menu" size={20} color="white" />
             </TouchableOpacity>
           </View>
-        ) : (
+        ) : null}
+        {props.showArrow ? (
           <View style={styles.left}>
             <TouchableOpacity onPress={() => props.navigation.goBack()}>
               <Icon
@@ -34,7 +35,8 @@ export default function Header(props) {
               />
             </TouchableOpacity>
           </View>
-        )}
+        ) : null}
+
         {hidden ? (
           <View style={styles.middle}>
             <Text style={styles.headerTitle}>{props.title}</Text>
@@ -74,7 +76,7 @@ export default function Header(props) {
               <Icon
                 style={styles.icon}
                 name="cart-outline"
-                size={20}
+                size={22}
                 color="white"
               />
               <Badge />
@@ -101,7 +103,7 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   left: {
-    flex: 0.6,
+    flex: 0.2,
     alignItems: 'flex-start',
     paddingLeft: 10,
   },
@@ -110,8 +112,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   right: {
-    flex: 0.4,
-    marginLeft: 5,
+    flex: 0.3,
+    marginLeft: 10,
     // alignItems: 'flex-end',
     // paddingRight: 0,
   },
@@ -123,8 +125,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'white',
     backgroundColor: 'white',
-    width: 250,
+    width: 270,
     borderRadius: 25,
+    height: 40,
+    paddingLeft: 20,
   },
   View2: {
     alignItems: 'center',

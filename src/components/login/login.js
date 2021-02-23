@@ -101,7 +101,11 @@ class Login extends Component {
   render() {
     return (
       <View style={styles.MainLoginView}>
-        <Header title="Login" navigation={this.props.navigation} />
+        <Header
+          title="Login"
+          navigation={this.props.navigation}
+          showArrow={true}
+        />
 
         <ScrollView
           contentContainerStyle={{

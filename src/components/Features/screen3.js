@@ -148,7 +148,9 @@ export default class Screen3 extends Component {
             </TouchableOpacity>
           </View>
           <View style={styles.View1}>
-            <TouchableOpacity style={styles.Button}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Cart')}
+              style={styles.Button}>
               <Text style={{color: 'white', fontSize: 17}}>Buy Now</Text>
             </TouchableOpacity>
           </View>

@@ -17,48 +17,69 @@ import Profile from '../profilePage/profile';
 import Login from '../login/login';
 import Register from '../login/Register';
 import Forgot from '../login/Forgot';
+import Order from '../orderPage/order';
 import CustomDrawer from '../Navigation/customDrawer';
 import Map from '../../Map/Map';
 import WrapperComponent from '../../modal/modal';
 import Slider from '../Slider/slider';
+import Furniture from '../categories/furniture';
+import Kitchen from '../categories/kitchen';
+import BedRoom from '../categories/Bedroom';
+import fieldValidation from '../../fieldValidation/fieldValidation';
 import SliderModal from '../Slider/sliderModal';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 
-function DrawerNavigation() {
-  return (
-    <Tab.Navigator
-      screenOptions={({route}) => ({
-        tabBarIcon: ({focused, color, size}) => {
-          let iconName;
+// function DrawerNavigation() {
+//   return (
+// <Tab.Navigator
+//   screenOptions={({route}) => ({
+//     tabBarIcon: ({focused, color, size}) => {
+//       let iconName;
 
-          if (route.name === 'Home') {
-            iconName = focused ? 'ios-home-outline' : 'ios-home';
-          } else if (route.name === 'Categories') {
-            iconName = focused ? 'ios-list' : 'ios-list';
-          } else if (route.name === 'Cart') {
-            iconName = focused ? 'ios-cart' : 'ios-cart-outline';
-          } else if (route.name === 'Account') {
-            iconName = focused ? 'ios-person-outline' : 'ios-person-outline';
-          }
+//       if (route.name === 'Home') {
+//         iconName = focused ? 'ios-home-outline' : 'ios-home';
+//       } else if (route.name === 'Categories') {
+//         iconName = focused ? 'ios-list' : 'ios-list';
+//       } else if (route.name === 'Cart') {
+//         iconName = focused ? 'ios-cart' : 'ios-cart-outline';
+//       } else if (route.name === 'Account') {
+//         iconName = focused ? 'ios-person-outline' : 'ios-person-outline';
+//       }
 
-          // You can return any component that you like here!
-          return <Ionicons name={iconName} size={size} color={color} />;
-        },
-      })}
-      tabBarOptions={{
-        activeTintColor: 'red',
-        inactiveTintColor: 'gray',
-      }}>
-      <Tab.Screen name="Home" component={NewScreen} />
-      <Tab.Screen name="Categories" component={Categories} />
-      <Tab.Screen name="Cart" component={Cart} />
-      <Tab.Screen name="Account" component={ProfileScreen} />
-    </Tab.Navigator>
-  );
-}
+//       // You can return any component that you like here!
+//       return <Ionicons name={iconName} size={size} color={color} />;
+//     },
+//   })}
+//   tabBarOptions={{
+//     activeTintColor: 'red',
+//     inactiveTintColor: 'gray',
+//   }}>
+//   <Tab.Screen name="Home" component={NewScreen} />
+//   <Tab.Screen name="Categories" component={Categories} />
+//   <Tab.Screen name="Cart" component={Cart} />
+//   <Tab.Screen name="Account" component={ProfileScreen} />
+// </Tab.Navigator>
+//     <Drawer.Navigator
+//       headerMode="none"
+//       initialRouteName="Home"
+//       screenOptions={{
+//         unmountOnBlur: true,
+//       }}
+//       drawerContent={(props) => <CustomDrawer {...props} />}
+//       drawerContentOptions={{
+//         activeTintColor: 'red',
+//         itemStyle: {},
+//       }}>
+//       <Drawer.Screen name="Home" component={NewScreen} />
+//       <Drawer.Screen name="Cart" component={Cart} />
+//       <Drawer.Screen name="Categories" component={Categories} />
+//       <Drawer.Screen name="Account" component={Account} />
+//     </Drawer.Navigator>
+//   );
+// }
 
 function NewScreen() {
   return (
@@ -69,18 +90,21 @@ function NewScreen() {
       <Stack.Screen name="Screen2" component={Screen2} />
       <Stack.Screen name="Screen3" component={Screen3} />
       <Stack.Screen name="Screen4" component={Screen4} />
+      {/* <Stack.Screen name="Categories" component={Categories} /> */}
     </Stack.Navigator>
   );
 }
 
-// function SliderModalScreen() {
-//   return (
-//     <Stack.Navigator headerMode="none" initialRouteName="Slider">
-//       <Stack.Screen name="slider" component={Slider} />
-//       <Stack.Screen name="sliderModal" component={SliderModal} />
-//     </Stack.Navigator>
-//   );
-// }
+function CategoriesScreen() {
+  return (
+    <Stack.Navigator headerMode="none" initialRouteName="Categories">
+      <Stack.Screen name="Categories" component={Categories} />
+      <Stack.Screen name="furniture" component={Furniture} />
+      <Stack.Screen name="Kitchen" component={Kitchen} />
+      <Stack.Screen name="BedRoom" component={BedRoom} />
+    </Stack.Navigator>
+  );
+}
 
 function ProfileScreen() {
   return (
@@ -88,6 +112,16 @@ function ProfileScreen() {
       <Stack.Screen name="Account" component={Account} />
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="Login" component={RegisterPage} />
+      <Stack.Screen name="Order" component={OrderScreen} />
+      <Stack.Screen name="fieldValidation" component={fieldValidation} />
+    </Stack.Navigator>
+  );
+}
+
+function OrderScreen() {
+  return (
+    <Stack.Navigator headerMode="none" initialRouteName="Order">
+      <Stack.Screen name="Order" component={Order} />
     </Stack.Navigator>
   );
 }
@@ -124,7 +158,7 @@ function RegisterPage() {
 export default function Navigation() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator
+      {/* <Drawer.Navigator
         headerMode="none"
         initialRouteName="Home"
         screenOptions={{
@@ -137,9 +171,38 @@ export default function Navigation() {
         }}>
         <Drawer.Screen name="Home" component={DrawerNavigation} />
         <Drawer.Screen name="Cart" component={Cart} />
-        <Drawer.Screen name="Categories" component={WrapperComponent} />
+        <Drawer.Screen name="Categories" component={Categories} />
         <Drawer.Screen name="Account" component={Account} />
-      </Drawer.Navigator>
+      </Drawer.Navigator> */}
+
+      <Tab.Navigator
+        screenOptions={({route}) => ({
+          tabBarIcon: ({focused, color, size}) => {
+            let iconName;
+
+            if (route.name === 'Home') {
+              iconName = focused ? 'ios-home-outline' : 'ios-home';
+            } else if (route.name === 'Categories') {
+              iconName = focused ? 'ios-list' : 'ios-list';
+            } else if (route.name === 'Cart') {
+              iconName = focused ? 'ios-cart' : 'ios-cart-outline';
+            } else if (route.name === 'Account') {
+              iconName = focused ? 'ios-person-outline' : 'ios-person-outline';
+            }
+
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+        })}
+        tabBarOptions={{
+          activeTintColor: 'red',
+          inactiveTintColor: 'gray',
+        }}>
+        <Tab.Screen name="Home" component={NewScreen} />
+        <Tab.Screen name="Categories" component={CategoriesScreen} />
+        <Tab.Screen name="Cart" component={Cart} />
+        <Tab.Screen name="Account" component={ProfileScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
