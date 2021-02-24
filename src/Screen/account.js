@@ -97,9 +97,11 @@ class Account extends Component {
                 />
               </TouchableOpacity>
             </View>
-            <View style={styles.View6}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('DataListUsage')}
+              style={styles.View6}>
               <Text>Privacy Policy</Text>
-            </View>
+            </TouchableOpacity>
             <View style={styles.View7}>
               <TouchableOpacity>
                 <Icon
