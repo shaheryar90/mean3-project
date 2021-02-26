@@ -12,6 +12,8 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Header from '../../header/header';
+import {CardNumberCount} from '../../../App';
+
 export default class Screen1 extends Component {
   constructor(props) {
     super(props);
@@ -21,9 +23,18 @@ export default class Screen1 extends Component {
       selectedImage:
         'https://secure.img1-fg.wfcdn.com/im/27231273/compr-r85/4411/44115433/carolyn-coffee-table-with-storage.jpg',
       cartNumber: 0,
+      fnameFunction: '',
     };
   }
 
+  componentDidMount() {
+    // console.log('cardnumber', this.props.cardCountIncrease);
+  }
+
+  checkApi = () => {
+    this.setState({fnameFunction: fname.cardCountIncrease});
+    console.log(fnameFunction);
+  };
   render() {
     return (
       <View style={{flex: 1, marginBottom: 30}}>
@@ -37,6 +48,12 @@ export default class Screen1 extends Component {
             cartNumber={this.state.cartNumber}
           />
         </View>
+        <CardNumberCount.Consumer>
+          {(fname) => {
+            console.log('api context', fname);
+          }}
+          /* cardCountIncrease={() => fname.cardCountIncrease}
+        </CardNumberCount.Consumer>
 
         <ScrollView>
           <View>
@@ -154,11 +171,7 @@ export default class Screen1 extends Component {
             </View>
           </View>
           <View style={styles.View1}>
-            <TouchableOpacity
-              onPress={() =>
-                this.setState({cartNumber: this.state.cartNumber + 1})
-              }
-              style={styles.Button}>
+            <TouchableOpacity onPress={this.checkApi} style={styles.Button}>
               <Text style={{color: 'white', fontSize: 17}}>Add To Cart</Text>
             </TouchableOpacity>
           </View>
