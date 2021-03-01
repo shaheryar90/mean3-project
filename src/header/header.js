@@ -10,11 +10,17 @@ import {
 } from 'react-native';
 import Badge from '../badge/badge';
 
+import {CardNumberCount} from '../../App';
+
 export default function Header(props) {
   const [hidden, setHidden] = useState(true);
   const [iconName, setIconName] = useState('search-sharp');
-
-  return (
+  
+    return(
+    <CardNumberCount.Consumer>
+          {(fname) => {
+            console.log('api context HEADER', fname);
+            return (
     <>
       <View style={styles.container}>
         {props.showMenu ? (
@@ -79,7 +85,7 @@ export default function Header(props) {
                 size={22}
                 color="white"
               />
-              <Badge />
+              <Badge fname={fname.cardCount} />
               {/* <View style={styles.badge}>
                 <Text style={{color: 'red'}}>1</Text>
               </View> */}
@@ -90,7 +96,10 @@ export default function Header(props) {
         )}
       </View>
     </>
-  );
+       ) }}
+       </CardNumberCount.Consumer>
+       )
+
 }
 
 const styles = StyleSheet.create({
