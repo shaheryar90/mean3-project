@@ -7,16 +7,14 @@ class Badge extends Component {
     super(props);
   }
 
-
-  componentDidMount(){
-    console.log(this.props.fname)
+  componentDidMount() {
+    console.log('badge', this.props.cardCount);
   }
   render() {
-    
     return (
       <View style={styles.badge}>
         {/* <Text style={{color: 'red'}}>{this.props.cardNumber}</Text> */}
-        <Text style={{color: 'red'}}>{this.props.fname}</Text>
+        <Text style={{color: 'red'}}>{this.props.cardCount}</Text>
       </View>
     );
   }

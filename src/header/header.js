@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {
   View,
@@ -15,12 +15,11 @@ import {CardNumberCount} from '../../App';
 export default function Header(props) {
   const [hidden, setHidden] = useState(true);
   const [iconName, setIconName] = useState('search-sharp');
-  
-    return(
-    <CardNumberCount.Consumer>
-          {(fname) => {
-            console.log('api context HEADER', fname);
-            return (
+
+  useEffect(() => {
+    console.log('sadajkdhasjk', props.cardCount);
+  });
+  return (
     <>
       <View style={styles.container}>
         {props.showMenu ? (
@@ -85,7 +84,7 @@ export default function Header(props) {
                 size={22}
                 color="white"
               />
-              <Badge fname={fname.cardCount} />
+              <Badge cardCount={props.cardCount} />
               {/* <View style={styles.badge}>
                 <Text style={{color: 'red'}}>1</Text>
               </View> */}
@@ -96,10 +95,7 @@ export default function Header(props) {
         )}
       </View>
     </>
-       ) }}
-       </CardNumberCount.Consumer>
-       )
-
+  );
 }
 
 const styles = StyleSheet.create({
