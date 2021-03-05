@@ -71,7 +71,7 @@ class Account extends Component {
               </TouchableOpacity>
             </View>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('HooksUsage')}
+              onPress={() => this.props.navigation.navigate('FoodPandaUsage')}
               style={styles.View6}>
               <Text>Terms And Services</Text>
             </TouchableOpacity>
@@ -129,9 +129,11 @@ class Account extends Component {
                 />
               </TouchableOpacity>
             </View>
-            <View style={styles.View6}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('UsageArrays')}
+              style={styles.View6}>
               <Text>About us</Text>
-            </View>
+            </TouchableOpacity>
             <View style={styles.View7}>
               <TouchableOpacity>
                 <Icon
