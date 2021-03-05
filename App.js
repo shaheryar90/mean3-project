@@ -3,11 +3,14 @@ import Navigation from './src/components/Navigation/navigation';
 import ScreenLogo from './src/SplashScreen/screenLogo';
 // import CardContext from './src/context/cartContext';
 
-const CardNumberCount = createContext();
+const CardNumberCount = createContext({
+  // cardCount:0
+});
 
 class App extends Component {
   constructor() {
     super();
+
     this.state = {
       loading: true,
       cardCount: 0,
@@ -19,6 +22,11 @@ class App extends Component {
       this.setState({loading: false});
     }, 2000);
   }
+
+  contextapi = () => {
+    alert();
+    this.setState({cardCount: this.state.cardCount + 1});
+  };
   render() {
     if (this.state.loading == true) {
       return <ScreenLogo />;
@@ -26,10 +34,8 @@ class App extends Component {
       return (
         <CardNumberCount.Provider
           value={{
+            cardCountIncrease: this.contextapi,
             cardCount: this.state.cardCount,
-            cardCountIncrease: () => {
-              this.setState({cardCount: cardCount + 1});
-            },
           }}>
           <Navigation />
         </CardNumberCount.Provider>
