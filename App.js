@@ -43,7 +43,6 @@ class App extends Component {
     }
   }
 }
-var appf;
 
 export default App;
 export {CardNumberCount};

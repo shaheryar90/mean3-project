@@ -17,7 +17,7 @@ export default function Header(props) {
   const [iconName, setIconName] = useState('search-sharp');
 
   useEffect(() => {
-    console.log('sadajkdhasjk', props.cardCount);
+    console.log('sadajkdhasjk', props);
   });
   return (
     <>
@@ -84,7 +84,7 @@ export default function Header(props) {
                 size={22}
                 color="white"
               />
-              <Badge cardCount={props.cardCount} />
+              <Badge cardCount={props.cartNumber} />
               {/* <View style={styles.badge}>
                 <Text style={{color: 'red'}}>1</Text>
               </View> */}

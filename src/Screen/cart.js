@@ -391,12 +391,12 @@ const styles = StyleSheet.create({
   checkOutContentView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: GetScreenWidth(90),
+    // width: GetScreenWidth(90),
   },
   checkOutContentView1: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: GetScreenWidth(90),
+    // width: GetScreenWidth(90),
     marginTop: 20,
   },
   couponButtonView: {
@@ -447,7 +447,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'stretch',
     padding: 10,
-    width: GetScreenWidth(80),
+    // width: GetScreenWidth(80),
     // marginHorizontal: 20,
   },
   couponView: {
@@ -456,7 +456,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: GetScreenWidth(95),
+    // width: GetScreenWidth(95),
     paddingLeft: 10,
     paddingRight: 10,
   },
@@ -466,7 +466,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     // flexDirection: 'row',
     justifyContent: 'space-between',
-    width: GetScreenWidth(95),
+    // width: GetScreenWidth(95),
     paddingLeft: 10,
     paddingRight: 10,
     // height: 400,

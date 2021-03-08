@@ -71,7 +71,7 @@ class Account extends Component {
               </TouchableOpacity>
             </View>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('FoodPandaUsage')}
+              onPress={() => this.props.navigation.navigate('FoodOrderPage')}
               style={styles.View6}>
               <Text>Terms And Services</Text>
             </TouchableOpacity>
