@@ -130,7 +130,7 @@ class Account extends Component {
               </TouchableOpacity>
             </View>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('UsageArrays')}
+              onPress={() => this.props.navigation.navigate('Parallelex')}
               style={styles.View6}>
               <Text>About us</Text>
             </TouchableOpacity>

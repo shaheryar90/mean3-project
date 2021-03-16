@@ -27,6 +27,7 @@ import Kitchen from '../categories/kitchen';
 import BedRoom from '../categories/Bedroom';
 import fieldValidation from '../../fieldValidation/fieldValidation';
 import SliderModal from '../Slider/sliderModal';
+import Parallelex from '../../parallelex Header/parallelex';
 import FoodOrderPage from '../foodPanda/foodOrderPage';
 
 import UsageArrays from '../Arrays/usageArrays';
@@ -120,6 +121,7 @@ function ProfileScreen() {
       <Stack.Screen name="FoodOrderPage" component={FoodOrderPage} />
       <Stack.Screen name="DataListUsage" component={DataListUsage} />
       <Stack.Screen name="UsageArrays" component={UsageArrays} />
+      <Stack.Screen name="Parallelex" component={Parallelex} />
     </Stack.Navigator>
   );
 }
