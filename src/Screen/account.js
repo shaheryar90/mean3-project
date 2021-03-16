@@ -150,6 +150,33 @@ class Account extends Component {
               <TouchableOpacity>
                 <Icon
                   style={styles.icon}
+                  name="ios-information-circle-sharp"
+                  size={30}
+                  color="red"
+                />
+              </TouchableOpacity>
+            </View>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('UsageArrays')}
+              style={styles.View6}>
+              <Text>A</Text>
+            </TouchableOpacity>
+            <View style={styles.View7}>
+              <TouchableOpacity>
+                <Icon
+                  style={styles.icon}
+                  name="ios-chevron-forward"
+                  size={30}
+                  color="red"
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
+          <View style={styles.View4}>
+            <View style={styles.View5}>
+              <TouchableOpacity>
+                <Icon
+                  style={styles.icon}
                   name="md-call-sharp"
                   size={30}
                   color="red"

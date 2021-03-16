@@ -11,10 +11,19 @@ import {
 } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Header from '../../header/header';
 export default class FoodOrderPage extends React.Component {
   render() {
     return (
       <>
+        <Header
+          // style={{backgroundColor: 'white'}}
+          // title="Product"
+
+          showArrow={true}
+          // title="Product"
+          navigation={this.props.navigation}
+        />
         <ImageBackground
           style={{flex: 1}}
           opacity={0.2}

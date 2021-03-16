@@ -27,11 +27,11 @@ export default class fieldValidation extends Component {
       email: '',
       password: '',
       number: '',
+      borderColor: 'lightgray',
       color: 'lightgrey',
       button: false,
       opacity: 0.2,
       user: '',
-      borderColor: 'lightgray',
     };
   }
 
@@ -92,15 +92,10 @@ export default class fieldValidation extends Component {
   };
   render() {
     const buttonTextStyle = {
-      //   color: this.state.color === 'lightgrey' ? 'lightgrey' : 'red',
       color: 'white',
       backgroundColor: 'darkseagreen',
       padding: 10,
       borderRadius: 5,
-      //   opacity: this.state.opacity,
-
-      //   backgroundColor: 'red',
-      //   disabled: false,
     };
     return (
       <>

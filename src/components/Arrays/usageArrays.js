@@ -1,6 +1,14 @@
 import {StyleSheet, Text, View, Alert, TextInput} from 'react-native';
 import React from 'react';
 export default class UsageArray extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      borderColor: 'lightgray',
+      onFocus: false,
+    };
+  }
+
   SampleFunction = (item) => {
     Alert.alert(item);
     // console.log(key);
@@ -31,13 +39,22 @@ export default class UsageArray extends React.Component {
     const a = fruits.copyWithin(2, 0);
     console.log(a);
     var ages = [32, 33, 16, 40];
+    var colors = ['red', 'pink', 'yellow', 'gray'];
 
     return (
       <>
-        {/* const textInputComponents = */}
-        {/* {form.map((type) => (
-          <TextInput placeholder={type} />
-        ))} */}
+        {colors.map((type) => (
+          <View
+            // placeholder={type}
+            // onFocus={() => this.setState({onFocus: true})}
+            // style={[
+            //   styles.inputField,
+            //   {borderColor: this.state.onFocus ? 'red' : 'lightgray'},
+            // ]}
+            style={{backgroundColor: type}}>
+            <Text>ghfgfghhgfj</Text>
+          </View>
+        ))}
         {/* 
         <View>
           {names
@@ -46,7 +63,7 @@ export default class UsageArray extends React.Component {
               <Text>{filteredName}</Text>
             ))}
         </View> */}
-        <View style={styles.MainContainer}>
+        {/* <View style={styles.MainContainer}>
           {SampleNameArray.map((item, key) => (
             <Text
               key={key}
@@ -64,7 +81,7 @@ export default class UsageArray extends React.Component {
                 <Text>{age}</Text>
               </>
             ))}
-        </View>
+        </View> */}
       </>
     );
   }
@@ -79,5 +96,9 @@ const styles = StyleSheet.create({
   TextStyle: {
     fontSize: 25,
     textAlign: 'center',
+  },
+  inputField: {
+    borderWidth: 1,
+    borderColor: 'lightgray',
   },
 });
